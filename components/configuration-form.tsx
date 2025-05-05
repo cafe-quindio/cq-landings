@@ -75,7 +75,6 @@ export default function ConfigurationForm({
     },
   });
 
-  console.log("show_menu_button", watch("show_menu_button"));
   const showMenuButton = watch("show_menu_button");
 
   const addCustomButton = () => {
@@ -238,7 +237,6 @@ export default function ConfigurationForm({
             <Checkbox
               id="show_menu_button"
               onCheckedChange={(checked) => {
-                console.log("checked", checked);
                 setValue("show_menu_button", checked);
               }}
               {...register("show_menu_button")}

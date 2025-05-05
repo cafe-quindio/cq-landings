@@ -86,7 +86,6 @@ export async function logoutUser(token: string): Promise<void> {
 export async function getCurrentUser(): Promise<User | null> {
   const cookieStore = await cookies()
   const token = cookieStore.get("auth_token")?.value
-  console.log("token getCurrentUser", token)
   if (!token) {
     return null
   }
@@ -117,7 +116,6 @@ export async function getCurrentUser(): Promise<User | null> {
 // Función para requerir autenticación
 export async function requireAuth() {
   const user = await getCurrentUser()
-  console.log(user)
 
   if (!user) {
     redirect("/login")

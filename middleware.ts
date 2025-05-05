@@ -25,7 +25,6 @@ export async function middleware(req: NextRequest) {
     }
 
     const { token: tokenValue, userId } = JSON.parse(token)
-    console.log("token middleware", token)
     // const { valid, userId } = await verifyJWT(token)
     if (!tokenValue) {
       const redirectUrl = new URL("/login", req.url)
